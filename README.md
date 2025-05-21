@@ -1,8 +1,8 @@
 ## **Methodology**
 
-Link to Github page/story: https://smarshak33.github.io/dataStory/index.html
+Read the full story here: https://smarshak33.github.io/dataStory/index.html
 
-Link to my full dataset: https://github.com/smarshak33/dataStory/blob/main/data-raw/nyc.xlsx 
+The story can be reproduced from this GitHub repository: https://github.com/smarshak33/dataStory.git
 
 ## **Source:**
 My data is exported on excel from the United States Census Bureau's collection of monthly Business Formations/Applications in NYC.
