@@ -1,7 +1,7 @@
 ## **Methodology**
-Sami Marshak
-Link to my Github page: https://smarshak33.github.io/dataStory/index.html
-Link to my Github and full dataset: https://github.com/smarshak33/dataStory/blob/main/dataStory.ipynb
+# Sami Marshak
+# Link to my Github page/story: https://smarshak33.github.io/dataStory/index.html
+# Link to my full dataset: 
 https://github.com/smarshak33/dataStory/blob/main/data-raw/nyc.xlsx 
 
 **Source** 
