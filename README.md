@@ -1,16 +1,16 @@
 ## **Methodology**
-# Sami Marshak
-# Link to my Github page/story: https://smarshak33.github.io/dataStory/index.html
-# Link to my full dataset: 
-https://github.com/smarshak33/dataStory/blob/main/data-raw/nyc.xlsx 
+Sami Marshak
+Link to my Github page/story: https://smarshak33.github.io/dataStory/index.html
+Link to my full dataset: https://github.com/smarshak33/dataStory/blob/main/data-raw/nyc.xlsx 
 
-**Source** 
+**Source: **
 My data is exported on excel from the United States Census Bureau's collection of monthly Business Formations/Applications in NYC.
 
-**Categories** 
-Originally, when I downloaded the data on business formations, it included the "value" or amount of business formations in NYC there were in each month of a given year. I downloaded data from January 2016 until the latest publication of data in April 2025, but my story was about entrepreneurship slightly before the pandemic and now so I only needed data as far back as 2019. 
+**Categories:** 
+Originally, when I downloaded the data on business formations, it included the "value" or amount of business formations in NYC there were in each month of a given year. I downloaded data from January 2016 until the latest publication of data in April 2025, but because my story was about entrepreneurship slightly before the pandemic until now, I only needed data as far back as 2019. 
 
-To analyze how the trend in business formations has changed in NYC in 2025, which corresponds to entrepreneurship, I knew I needed to calculate percent changes-- but this is a much harder task to do in Python than I originally thought.
+**Analysis:**
+To analyze how the trend in business formations has changed in NYC in 2025, which corresponds to entrepreneurship, I knew I needed to calculate percent changes-- but this was much more complex to accomplisg in Python than I originally thought.
 
 I started with the basic, preliminary steps such as importing pandas, getting rid of wonky formatting, and trying to understand the data better using info and describe. All the dates were in the same column in a format that Python wouldn't understand for calculations, so I created a df called business_applications and converted the "period" column to datetime format using pandas. I soon realized that I wouldn't be able to do any meaningful analysis without creating more columns where the dates are separated by year, as we learned in class. 
 
