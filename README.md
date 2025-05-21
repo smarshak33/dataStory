@@ -1,27 +1,28 @@
 ## **Methodology**
-Sami Marshak
-Link to my Github page/story: https://smarshak33.github.io/dataStory/index.html
+
+Link to Github page/story: https://smarshak33.github.io/dataStory/index.html
+
 Link to my full dataset: https://github.com/smarshak33/dataStory/blob/main/data-raw/nyc.xlsx 
 
-**Source: **
+## **Source: **
 My data is exported on excel from the United States Census Bureau's collection of monthly Business Formations/Applications in NYC.
 
-**Categories:** 
+## **Categories:** 
 Originally, when I downloaded the data on business formations, it included the "value" or amount of business formations in NYC there were in each month of a given year. I downloaded data from January 2016 until the latest publication of data in April 2025, but because my story was about entrepreneurship slightly before the pandemic until now, I only needed data as far back as 2019. 
 
-**Analysis:**
-To analyze how the trend in business formations has changed in NYC in 2025, which corresponds to entrepreneurship, I knew I needed to calculate percent changes-- but this was much more complex to accomplisg in Python than I originally thought.
+## **Analysis:**
+To analyze how the trend in business formations has changed in New York City in 2025—a key indicator of entrepreneurship—I focused on calculating percent changes over time. While I initially thought this would be straightforward, I quickly realized it required more complex data cleaning and transformation in Python than expected.
 
-I started with the basic, preliminary steps such as importing pandas, getting rid of wonky formatting, and trying to understand the data better using info and describe. All the dates were in the same column in a format that Python wouldn't understand for calculations, so I created a df called business_applications and converted the "period" column to datetime format using pandas. I soon realized that I wouldn't be able to do any meaningful analysis without creating more columns where the dates are separated by year, as we learned in class. 
+I began with preliminary steps, such as importing relevant Python libraries like pandas, exploring the dataset with .info() and .describe(), and cleaning formatting issues. One major obstacle was the "period" column, which stored dates in a format incompatible with time-series analysis. I created a new DataFrame, business_applications, and converted the "period" column to datetime format using pandas.to_datetime().
 
-Therefore, I created a pivot table that created "month" and "year" columns to clean the data. I enlisted the help of one of the data coaches for this step, because there were many issues that needed troubleshooting. For instance, I originally thought I needed to reindex the data to start at "1" instead of "0." We were also not sure why the year/month were in the same column when doing the pivot table, but when we exported the data to a csv to see what was the culprit, we learned it was just a Jupyter notebook hiccup.
+To make the data more usable, I extracted the year and month from the datetime values and created new columns for each. This allowed for easier grouping and time-based comparisons. Creating a pivot table was a key step—though it required troubleshooting. Initially, I misinterpreted the output, thinking that year and month were incorrectly combined into one column. Exporting the pivot to a CSV revealed it was simply a display quirk in Jupyter Notebook.
 
-After creating the pivot table, I sliced the data using .loc to get rid of 2016-2018, focusing only on 2019-2025 to do percent change. I finally had enough columns to do calculations that could "go across" the data. 
+Once the data was in a cleaner format, I used .loc[] to slice the DataFrame, narrowing the scope to business formations from 2019 to 2025 to allow for meaningful year-over-year (YoY) comparisons. I then used a percent change function we had covered in class. With help from a data coach, I applied the function in a loop across relevant columns to calculate the YoY percentage change for each month. This loop added new columns to the DataFrame showing the YoY change in business formations for each period.
 
-I found a percent change function we learned in class and used that to help with my analysis. To apply the function to all the columns without having to create a new function for each column, one of the data coaches helped me do a "for loop" that calculated the YoY $ change between each consecutive year, and added each result as a new column. I finally had all the data needed to complete my analysis, learning that new business formations rose by 1% in April compared to the same month last year, and were 4% higher in March 2025 than in March 2024. 
+The final analysis revealed that new business formations in NYC increased by 1% in April 2025 compared to April 2024, and were 4% higher in March 2025 than in March 2024. 
 
-Judgement calls and caveats: Did you omit any data (i.e. an outlier that was messing with your analysis? Something that didn’t make intuitive sense to include?)
+## **Editorial decisions** 
 
-I definitely made some judgement calls. There was DCWP data on NYC business licenses that I analyzed in excel, where I learned that in March of 2025, 1514 licenses have been issued to NYC businesses from the NYC Department of Consumer and Worker Protection (DWCP), a 24% increase from the same period last year. However, I didn't answer enough questions in my reporting about how significant that data was, what it truly means, and how it applies to entrepreneurship, so I decided to leave it out of my analysis.
+I made several editorial decisions about what data to include in the final analysis. For instance, I explored data from the NYC Department of Consumer and Worker Protection (DCWP), which showed that 1,514 business licenses were issued in March 2025—a 24% increase from the same month in 2024. However, I ultimately excluded this dataset. While the figure was interesting, I couldn’t confidently assess how directly it reflected entrepreneurial activity, and it raised more questions than answers. Without stronger reporting on what the licenses represented or how DCWP tracks business type or survival, including this data could have been misleading.
 
-Ideal further reporting and data analysis would also show the impact of congestion pricing and global tourism decline in hard data on entrepreneurship, but those answers aren't available yet. 
+Further reporting and analysis could explore the impact of upcoming policies like congestion pricing, or trends such as a decline in global tourism, on business formation rates. Unfortunately, the necessary data for these angles was not yet available.
