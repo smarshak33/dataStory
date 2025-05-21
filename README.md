@@ -1,11 +1,13 @@
-# dataStory
+## **Methodology**
 Sami Marshak
 Link to my Github page: https://smarshak33.github.io/dataStory/index.html
 Link to my Github and full dataset: https://github.com/smarshak33/dataStory/blob/main/dataStory.ipynb
 https://github.com/smarshak33/dataStory/blob/main/data-raw/nyc.xlsx 
 
+**Source** 
 My data is exported on excel from the United States Census Bureau's collection of monthly Business Formations/Applications in NYC.
 
+**Categories** 
 Originally, when I downloaded the data on business formations, it included the "value" or amount of business formations in NYC there were in each month of a given year. I downloaded data from January 2016 until the latest publication of data in April 2025, but my story was about entrepreneurship slightly before the pandemic and now so I only needed data as far back as 2019. 
 
 To analyze how the trend in business formations has changed in NYC in 2025, which corresponds to entrepreneurship, I knew I needed to calculate percent changes-- but this is a much harder task to do in Python than I originally thought.
